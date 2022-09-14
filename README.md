@@ -1,24 +1,60 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Booking Tours
 
-Things you may want to cover:
+> This is an app in wich you can reserve a tour, create a tour, delete a tour and show all your reserved tours. This app was created separating the Fron-End and the Back-End in two repositories. This is the repositorie of the back-end API.
 
-* Ruby version
+## Link to the Front-End repository
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Built With
 
-* Database initialization
+- Rails, Ruby, Devise, Cancancan, Rspec, SQL, Capybara.
 
-* How to run the test suite
+## Setup Project
+- Clone repo by using (https://github.com/Santiago220991/Booking-Tours.git)
+- Install dependencies with `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Usage
+- Run with `rails server`
 
-* Deployment instructions
+## Authors
 
-* ...
+👤 **Santiago Cárdenas**
+
+- GitHub: [@Santiago Cárdenas](https://github.com/Santiago220991)
+- LinkedIn: [Santiago Cárdenas](https://www.linkedin.com/in/alexandersantiagocardenas/)
+- Twitter: [@SanCardenas10](https://twitter.com/SanCardenas10)
+
+
+👤 **Mar Bautista**
+
+- GitHub: [marilirulita](https://github.com/marilirulita)
+- LinkedIn: [mar bautista](https://www.linkedin.com/in/marbautista/)
+- Twitter: [@marylirulita](https://twitter.com/marylirulita)
+
+👤 **Mahmoud Makhlouf**
+
+- GitHub: [@devMahmoud](https://github.com/devMahmoud)
+- LinkedIn: [Mahmoud Makhlouf](https://www.linkedin.com/in/mahmoud-abdelkader-makhlouf/)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Santiago220991/Booking-Tours/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Original design idea by [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
