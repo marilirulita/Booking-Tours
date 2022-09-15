@@ -1,5 +1,5 @@
 class UserToursController < ApplicationController
-  before_action :set_user_tour, only: %i[ show destroy ]
+  before_action :set_user_tour, only: %i[show destroy]
 
   # GET /user_tours
   def index
@@ -30,13 +30,14 @@ class UserToursController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_tour
-      @user_tour = UserTour.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_tour_params
-      params.require(:user_tour).permit(:user_id, :tour_id, :persons_number, :reservation_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_tour
+    @user_tour = UserTour.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_tour_params
+    params.require(:user_tour).permit(:user_id, :tour_id, :persons_number, :reservation_date)
+  end
 end
