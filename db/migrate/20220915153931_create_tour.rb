@@ -2,7 +2,7 @@ class CreateTour < ActiveRecord::Migration[7.0]
   def change
     create_table :tours do |t|
       t.string :title
-      t.string :duration
+      t.decimal :duration
       t.string :city
       t.string :description
       t.decimal :cost

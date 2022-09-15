@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_154039) do
 
   create_table "tours", force: :cascade do |t|
     t.string "title"
-    t.string "duration"
+    t.decimal "duration"
     t.string "city"
     t.string "description"
     t.decimal "cost"
