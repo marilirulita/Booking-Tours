@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe UserTour, type: :model do
+  before :all do
+    @user = User.new(name: 'Mahmoud')
+    @user.save
+    @tour = Tour.create(title: 'First Tour', description: 'In this tour we will visit x and ...', user_id: @user.id,
+                        cost: 500)
+    @user_tour = UserTour.create(user_id: @user.id, tour_id: @tour.id, persons_number: 3)
+  end
+
+  after :all do
+    User.destroy_all
+    Tour.destroy_all
+    UserTour.destroy_all
+  end
+
   context 'Testing UserTour validations and methods' do
-    before :all do
-      @user = User.new(name: 'Mahmoud')
-      @user.save
-      @tour = Tour.create(title: "First Tour", description: "In this tour we will visit x and ...", user_id: @user.id, cost: 500)
-      @user_tour = UserTour.create(user_id: @user.id, tour_id: @tour.id, persons_number: 3)
-    end
-
-    after :all do
-      User.destroy_all
-      Tour.destroy_all
-      UserTour.destroy_all
-    end
-
     it 'user_id should be present' do
       @user_tour.user_id = nil
       expect(@user_tour).to_not be_valid
