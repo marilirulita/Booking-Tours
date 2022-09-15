@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :tours do
-    resources :user_tours
-  end
+  resources :tours
+  resources :user_tours
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
