@@ -15,7 +15,7 @@ class ToursController < ApplicationController
 
   # POST /tours
   def create
-    @tour = Tour.new(tour_params)
+    @tour = Tour.new(tour_params) # current_user.tours.new(tour_params)
 
     if @tour.save
       render json: @tour, status: :created, location: @tour

@@ -3,7 +3,7 @@ class UserToursController < ApplicationController
 
   # GET /user_tours
   def index
-    @user_tours = UserTour.all
+    @user_tours = UserTour.all # current_user.user_tours.all
 
     render json: @user_tours
   end
@@ -15,7 +15,7 @@ class UserToursController < ApplicationController
 
   # POST /user_tours
   def create
-    @user_tour = UserTour.new(user_tour_params)
+    @user_tour = UserTour.new(user_tour_params) # current_user.user_tours.new(user_tour_params)
 
     if @user_tour.save
       render json: @user_tour, status: :created, location: @user_tour
