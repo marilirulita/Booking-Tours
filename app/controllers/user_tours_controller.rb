@@ -13,7 +13,7 @@ class UserToursController < ApplicationController
     @user = User.find(params[:id])
     @result = []
     @reservations = @user.user_tours
-    @reservations.each {|reserved| @result << Tour.find(reserved.tour_id)}
+    @reservations.each { |reserved| @result << Tour.find(reserved.tour_id) }
     render json: @result
   end
 
