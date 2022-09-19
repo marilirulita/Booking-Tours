@@ -10,7 +10,11 @@ class UserToursController < ApplicationController
 
   # GET /user_tours/1
   def show
-    render json: @user_tour
+    @user = User.find(params[:id])
+    @result = []
+    @reservations = @user.user_tours
+    @reservations.each { |reserved| @result << Tour.find(reserved.tour_id) }
+    render json: @result
   end
 
   # POST /user_tours
