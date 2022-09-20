@@ -50,3 +50,7 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'rack-cors'
+
+gem 'jwt'
+
+gem 'bcrypt', '~> 3.1.7'
