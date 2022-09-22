@@ -3,18 +3,19 @@ class UserToursController < ApplicationController
 
   # GET /user_tours
   def index
-    @user_tours = UserTour.all # current_user.user_tours.all
-
-    render json: @user_tours
+    @reservations = @current_user.user_tours
+    @result = []
+    @reservations.each do |reserved|
+      @result << { tour: Tour.find(reserved.tour_id), persons_number: reserved.persons_number,
+                   reservation_date: reserved.reservation_date }
+    end
+    render json: @result
   end
 
   # GET /user_tours/1
   def show
-    @user = User.find(params[:id])
-    @result = []
-    @reservations = @user.user_tours
-    @reservations.each { |reserved| @result << Tour.find(reserved.tour_id) }
-    render json: @result
+    @tour = Tour.find(params[:id])
+    render json: @tour
   end
 
   # POST /user_tours

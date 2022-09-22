@@ -18,4 +18,11 @@ class ApplicationController < ActionController::API
     end
     render json: { errors: 'Authorization header not present' }.to_json, status: :bad_request unless header
   end
+
+  def current_user
+    header = request.headers['Authorization']
+    header = header.split.last if header
+    decoded = jwt_decode(header)
+    @current_user = User.find(decoded[:user_id])
+  end
 end
