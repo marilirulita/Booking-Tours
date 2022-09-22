@@ -5,7 +5,10 @@ class UserToursController < ApplicationController
   def index
     @reservations = @current_user.user_tours
     @result = []
-    @reservations.each { |reserved| @result << {:tour => Tour.find(reserved.tour_id), :persons_number => reserved.persons_number, :reservation_date => reserved.reservation_date } }
+    @reservations.each do |reserved|
+      @result << { tour: Tour.find(reserved.tour_id), persons_number: reserved.persons_number,
+                   reservation_date: reserved.reservation_date }
+    end
     render json: @result
   end
 
