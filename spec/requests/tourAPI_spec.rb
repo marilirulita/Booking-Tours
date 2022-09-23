@@ -55,17 +55,15 @@ RSpec.describe 'tours', type: :request do
           end
 
     
-      post('get list of tours') do
+      post('New tour') do
         tags 'Tour'
-        description 'List all tours'
+        consumes  'application/json'
+        description 'Create a new tour'
         produces 'application/json'
         security [bearer_auth: []]
         parameter name: 'Authorization', in: :header, type: :string
-        parameter name: :params, in: :body, schema: {
+        parameter name: :tour, in: :body, schema: {
           type: :object,
-          properties: {
-            tour: {
-              type: :object,
           properties: {
                 title: { type: :string },
                 duration: { type: :string },
@@ -77,10 +75,8 @@ RSpec.describe 'tours', type: :request do
               },
               required: %w[title duration city description cost photo user_id]
             }
-          }
-        }
             response(201, 'Successful') do
-            let(:params) { {tour:{title:"title", duration:2, city:"City", description:"Description", cost:2, photo:"asdf", user_id:user.id}}}
+            let(:tour) { {title:"title", duration:2, city:"City", description:"Description", cost:2, photo:"asdf", user_id:user.id}}
             let("Authorization") { token }
             
             example 'application/json', :successful, {
