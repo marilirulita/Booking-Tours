@@ -4,7 +4,8 @@ class UserToursController < ApplicationController
     @reservations = @current_user.user_tours
     @result = []
     @reservations.each do |reserved|
-      @result << { tour: Tour.find(reserved.tour_id), persons_number: reserved.persons_number, reservation_date: reserved.reservation_date, reservation_id: reserved.id }
+      @result << { tour: Tour.find(reserved.tour_id), persons_number: reserved.persons_number,
+                   reservation_date: reserved.reservation_date, reservation_id: reserved.id }
     end
     render json: @result
   end
