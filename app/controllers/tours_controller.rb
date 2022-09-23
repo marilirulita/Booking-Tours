@@ -1,6 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: %i[show destroy]
-
+  skip_before_action :authenticate_request, only: [:index, :show]
   # GET /tours
   def index
     @tours = Tour.all
@@ -10,12 +9,13 @@ class ToursController < ApplicationController
 
   # GET /tours/1
   def show
+    @tour = Tour.find(params[:id])
     render json: @tour
   end
 
   # POST /tours
   def create
-    @tour = Tour.new(tour_params) # current_user.tours.new(tour_params)
+    @tour = @current_user.tours.new(tour_params)
 
     if @tour.save
       render json: @tour, status: :created, location: @tour
@@ -26,18 +26,13 @@ class ToursController < ApplicationController
 
   # DELETE /tours/1
   def destroy
-    @tour.destroy
+    @current_user.tours.find(params[:id]).destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_tour
-    @tour = Tour.find(params[:id])
-  end
-
   # Only allow a list of trusted parameters through.
   def tour_params
-    params.require(:tour).permit(:user_id, :title, :description, :cost, :duration, :photo, :city)
+    params.require(:tour).permit(:title, :description, :cost, :duration, :photo, :city)
   end
 end
