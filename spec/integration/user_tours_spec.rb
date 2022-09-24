@@ -101,4 +101,20 @@ describe 'Reservations API' do
           end
         end
 
+        path '/user_tours/{id}' do
+          parameter name: 'id', in: :path, type: :string, description: 'id'
+          delete('delete reservation') do
+            tags 'Reservation'
+            description 'Delete a reservation'
+            produces 'application/json'
+            security [bearer_auth: []]
+            parameter name: 'Authorization', in: :header, type: :string
+            
+            response(204, "successful") do
+              let("Authorization") { token }
+              let(:id) { UserTour.create(persons_number:2, reservation_date: "2022-10-21", tour_id:tour.id, user_id:user.id).id }
+              run_test!
+            end
+          end
+        end
 end
