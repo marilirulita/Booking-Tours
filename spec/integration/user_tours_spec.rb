@@ -62,6 +62,43 @@ describe 'Reservations API' do
                 run_test!
             end
           end
+
+    post 'New reservation' do
+      tags 'Reservation'
+      consumes  'application/json'
+        description 'Create a new reservation'
+        produces 'application/json'
+        security [bearer_auth: []]
+        parameter name: 'Authorization', in: :header, type: :string
+        parameter name: :user_tour, in: :body, schema: {
+          type: :object,
+          properties: {
+            persons_number: { type: :string },
+            reservation_date: { type: :string },
+            user_id: { type: :string},
+            tour_id: { type: :string},
+              },
+              required: %w[persons_number tour_id user_id]
+            }
+            response(201, 'Successful') do
+            let(:user_tour) { {tour_id:tour.id, persons_number:2, reservation_date: "2022-10-21", user_id:user.id}}
+            let("Authorization") { token }
+            
+            example 'application/json', :successful, {
+              data: 
+                {
+                  id: 1,
+                  reservation_date: "2022-10-21",
+                  persons_number: 2,
+                  user_id: 1,
+                  tour_id: 1,
+                  created_at: "2022-09-21T15:41:25.060Z",
+                  updated_at: "2022-09-21T15:41:25.060Z"
+                }
+              }
+              run_test!
+            end
+          end
         end
 
 end
