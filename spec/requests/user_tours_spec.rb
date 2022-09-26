@@ -75,10 +75,10 @@ describe 'Reservations API' do
       parameter name: :user_tour, in: :body, schema: {
         type: :object,
         properties: {
-          persons_number: { type: :string },
-          reservation_date: { type: :string },
-          user_id: { type: :string },
-          tour_id: { type: :string }
+          persons_number: { type: :integer },
+          reservation_date: { type: :date },
+          user_id: { type: :bigint },
+          tour_id: { type: :bigint }
         },
         required: %w[persons_number tour_id user_id]
       }
