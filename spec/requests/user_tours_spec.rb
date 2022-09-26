@@ -66,7 +66,7 @@ describe 'Reservations API' do
     end
 
     post 'New reservation' do
-      tags 'Reservation'
+      tags 'Reservations'
       consumes 'application/json'
       description 'Create a new reservation'
       produces 'application/json'
@@ -108,7 +108,7 @@ describe 'Reservations API' do
   path '/user_tours/{id}' do
     parameter name: 'id', in: :path, type: :string, description: 'id'
     delete('delete reservation') do
-      tags 'Reservation'
+      tags 'Reservations'
       description 'Delete a reservation'
       produces 'application/json'
       security [bearer_auth: []]
