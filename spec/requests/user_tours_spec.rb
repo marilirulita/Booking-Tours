@@ -23,43 +23,43 @@ describe 'Reservations API' do
       parameter name: 'Authorization', in: :header, type: :string
       response(200, 'Successful') do
         let('Authorization') { token }
-        example 'application/json', :successful, 
-          [
-            {
-              tour: {
-                id: 1,
-                title: 'First Tour',
-                duration: '2.0',
-                city: 'Mansoura',
-                description: 'In this tour we will visit x and ...',
-                cost: '500.0',
-                photo: 'https://www.mans.edu.eg/images/album/mansoura-city/mc-nile.jpg',
-                user_id: 1,
-                created_at: '2022-09-22T00:27:45.651Z',
-                updated_at: '2022-09-22T00:27:45.651Z'
-              },
-              persons_number: 3,
-              reservation_date: '2022-10-22',
-              reservation_id: 1
-            },
-            {
-              tour: {
-                id: 2,
-                title: 'Second Tour',
-                duration: '3.0',
-                city: 'Sharm El Sheikh',
-                description: 'In this tour we will visit y and ...',
-                cost: '600.0',
-                photo: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/ed/sharm-el-sheikh.jpg?w=700&h=500&s=1',
-                user_id: 2,
-                created_at: '2022-09-22T00:27:45.670Z',
-                updated_at: '2022-09-22T00:27:45.670Z'
-              },
-              persons_number: 2,
-              reservation_date: '2022-10-22',
-              reservation_id: 2
-            }
-          ]
+        example 'application/json', :successful,
+                [
+                  {
+                    tour: {
+                      id: 1,
+                      title: 'First Tour',
+                      duration: '2.0',
+                      city: 'Mansoura',
+                      description: 'In this tour we will visit x and ...',
+                      cost: '500.0',
+                      photo: 'https://www.mans.edu.eg/images/album/mansoura-city/mc-nile.jpg',
+                      user_id: 1,
+                      created_at: '2022-09-22T00:27:45.651Z',
+                      updated_at: '2022-09-22T00:27:45.651Z'
+                    },
+                    persons_number: 3,
+                    reservation_date: '2022-10-22',
+                    reservation_id: 1
+                  },
+                  {
+                    tour: {
+                      id: 2,
+                      title: 'Second Tour',
+                      duration: '3.0',
+                      city: 'Sharm El Sheikh',
+                      description: 'In this tour we will visit y and ...',
+                      cost: '600.0',
+                      photo: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/ed/sharm-el-sheikh.jpg?w=700&h=500&s=1',
+                      user_id: 2,
+                      created_at: '2022-09-22T00:27:45.670Z',
+                      updated_at: '2022-09-22T00:27:45.670Z'
+                    },
+                    persons_number: 2,
+                    reservation_date: '2022-10-22',
+                    reservation_id: 2
+                  }
+                ]
         run_test!
       end
     end
@@ -88,13 +88,13 @@ describe 'Reservations API' do
         let('Authorization') { token }
 
         example 'application/json', :successful, {
-              id: 1,
-              reservation_date: '2022-10-21',
-              persons_number: 2,
-              user_id: 1,
-              tour_id: 1,
-              created_at: '2022-09-21T15:41:25.060Z',
-              updated_at: '2022-09-21T15:41:25.060Z'
+          id: 1,
+          reservation_date: '2022-10-21',
+          persons_number: 2,
+          user_id: 1,
+          tour_id: 1,
+          created_at: '2022-09-21T15:41:25.060Z',
+          updated_at: '2022-09-21T15:41:25.060Z'
         }
         run_test!
       end

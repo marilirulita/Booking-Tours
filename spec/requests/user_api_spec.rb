@@ -19,13 +19,13 @@ RSpec.describe 'users', type: :request do
       response(201, 'successful') do
         let(:params) { { name: 'user', email: 'user@gmail.com', password: 'password' } }
         example 'application/json', :successfull_login, {
-            id: 1,
-            name: 'user',
-            created_at: '2022-09-23T16:35:16.614Z',
-            updated_at: '2022-09-23T16:35:16.614Z',
-            email: 'user@gmail.com',
-            password_digest: '$2a$12$Dqn9G4HpoJQu3xh6GCEGKOr6vuZJf8afop4SLPaexOTjfG04vn8c6'
-          }
+          id: 1,
+          name: 'user',
+          created_at: '2022-09-23T16:35:16.614Z',
+          updated_at: '2022-09-23T16:35:16.614Z',
+          email: 'user@gmail.com',
+          password_digest: '$2a$12$Dqn9G4HpoJQu3xh6GCEGKOr6vuZJf8afop4SLPaexOTjfG04vn8c6'
+        }
         run_test!
       end
 

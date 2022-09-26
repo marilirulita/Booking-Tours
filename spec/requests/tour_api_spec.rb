@@ -23,31 +23,31 @@ RSpec.describe 'tours', type: :request do
       response(200, 'Successful') do
         let('Authorization') { token }
         example 'application/json', :successful, [
-            {
-              id: 1,
-              title: 'Tour Title',
-              duration: '3.0',
-              city: 'City',
-              description: 'Description',
-              cost: '100.0',
-              photo: 'https://image.jpg',
-              user_id: 1,
-              created_at: '2022-09-21T15:41:25.060Z',
-              updated_at: '2022-09-21T15:41:25.060Z'
-            },
-            {
-              id: 2,
-              title: 'Tour Title',
-              duration: '3.0',
-              city: 'City',
-              description: 'Description',
-              cost: '100.0',
-              photo: 'https://image.jpg',
-              user_id: 2,
-              created_at: '2022-09-21T15:41:25.060Z',
-              updated_at: '2022-09-21T15:41:25.060Z'
-            }
-          ]
+          {
+            id: 1,
+            title: 'Tour Title',
+            duration: '3.0',
+            city: 'City',
+            description: 'Description',
+            cost: '100.0',
+            photo: 'https://image.jpg',
+            user_id: 1,
+            created_at: '2022-09-21T15:41:25.060Z',
+            updated_at: '2022-09-21T15:41:25.060Z'
+          },
+          {
+            id: 2,
+            title: 'Tour Title',
+            duration: '3.0',
+            city: 'City',
+            description: 'Description',
+            cost: '100.0',
+            photo: 'https://image.jpg',
+            user_id: 2,
+            created_at: '2022-09-21T15:41:25.060Z',
+            updated_at: '2022-09-21T15:41:25.060Z'
+          }
+        ]
         run_test!
       end
     end
@@ -79,19 +79,19 @@ RSpec.describe 'tours', type: :request do
         end
         let('Authorization') { token }
 
-        example 'application/json', :successful, 
-            {
-              id: 1,
-              title: 'Tour Title',
-              duration: '3.0',
-              city: 'City',
-              description: 'Description',
-              cost: '100.0',
-              photo: 'https://image.jpg',
-              user_id: 1,
-              created_at: '2022-09-21T15:41:25.060Z',
-              updated_at: '2022-09-21T15:41:25.060Z'
-            }
+        example 'application/json', :successful,
+                {
+                  id: 1,
+                  title: 'Tour Title',
+                  duration: '3.0',
+                  city: 'City',
+                  description: 'Description',
+                  cost: '100.0',
+                  photo: 'https://image.jpg',
+                  user_id: 1,
+                  created_at: '2022-09-21T15:41:25.060Z',
+                  updated_at: '2022-09-21T15:41:25.060Z'
+                }
         run_test!
       end
     end
