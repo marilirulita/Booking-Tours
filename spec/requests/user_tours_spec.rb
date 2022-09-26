@@ -23,8 +23,8 @@ describe 'Reservations API' do
       parameter name: 'Authorization', in: :header, type: :string
       response(200, 'Successful') do
         let('Authorization') { token }
-        example 'application/json', :successful, {
-          data: [
+        example 'application/json', :successful, 
+          [
             {
               tour: {
                 id: 1,
@@ -60,7 +60,6 @@ describe 'Reservations API' do
               reservation_id: 2
             }
           ]
-        }
         run_test!
       end
     end
@@ -76,9 +75,9 @@ describe 'Reservations API' do
         type: :object,
         properties: {
           persons_number: { type: :integer },
-          reservation_date: { type: :date },
-          user_id: { type: :bigint },
-          tour_id: { type: :bigint }
+          reservation_date: { type: :string },
+          user_id: { type: :integer },
+          tour_id: { type: :integer }
         },
         required: %w[persons_number tour_id user_id]
       }
@@ -89,8 +88,6 @@ describe 'Reservations API' do
         let('Authorization') { token }
 
         example 'application/json', :successful, {
-          data:
-            {
               id: 1,
               reservation_date: '2022-10-21',
               persons_number: 2,
@@ -98,7 +95,6 @@ describe 'Reservations API' do
               tour_id: 1,
               created_at: '2022-09-21T15:41:25.060Z',
               updated_at: '2022-09-21T15:41:25.060Z'
-            }
         }
         run_test!
       end
