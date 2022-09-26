@@ -19,15 +19,12 @@ RSpec.describe 'auth/login', type: :request do
         let(:user) { User.create(name: 'User', email: 'test@test.com', password: 'password') }
         let(:params) { { email: user.email, password: user.password } }
         example 'application/json', :successfull_login, {
-          code: 200,
-          data: {
             token: 'ASDFARasdfasdf13ADSFAGASD',
             user: {
               name: 'User',
               user_id: 1
             }
           }
-        }
         run_test!
       end
 

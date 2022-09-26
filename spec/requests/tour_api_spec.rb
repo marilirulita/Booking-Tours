@@ -22,8 +22,7 @@ RSpec.describe 'tours', type: :request do
       parameter name: 'Authorization', in: :header, type: :string
       response(200, 'Successful') do
         let('Authorization') { token }
-        example 'application/json', :successful, {
-          data: [
+        example 'application/json', :successful, [
             {
               id: 1,
               title: 'Tour Title',
@@ -49,7 +48,6 @@ RSpec.describe 'tours', type: :request do
               updated_at: '2022-09-21T15:41:25.060Z'
             }
           ]
-        }
         run_test!
       end
     end
@@ -65,12 +63,12 @@ RSpec.describe 'tours', type: :request do
         type: :object,
         properties: {
           title: { type: :string },
-          duration: { type: :string },
+          duration: { type: :number },
           city: { type: :string },
           description: { type: :string },
-          cost: { type: :string },
+          cost: { type: :number },
           photo: { type: :string },
-          user_id: { type: :string }
+          user_id: { type: :integer }
         },
         required: %w[title duration city description cost photo user_id]
       }
@@ -81,8 +79,7 @@ RSpec.describe 'tours', type: :request do
         end
         let('Authorization') { token }
 
-        example 'application/json', :successful, {
-          data:
+        example 'application/json', :successful, 
             {
               id: 1,
               title: 'Tour Title',
@@ -95,7 +92,6 @@ RSpec.describe 'tours', type: :request do
               created_at: '2022-09-21T15:41:25.060Z',
               updated_at: '2022-09-21T15:41:25.060Z'
             }
-        }
         run_test!
       end
     end
