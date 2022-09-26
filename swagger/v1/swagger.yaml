@@ -19,12 +19,10 @@ paths:
               examples:
                 successfull_login:
                   value:
-                    code: 200
-                    data:
-                      token: ASDFARasdfasdf13ADSFAGASD
-                      user:
-                        name: User
-                        user_id: 1
+                    token: ASDFARasdfasdf13ADSFAGASD
+                    user:
+                      name: User
+                      user_id: 1
         '401':
           description: Invalid params
           content:
@@ -67,27 +65,26 @@ paths:
               examples:
                 successful:
                   value:
-                    data:
-                    - id: 1
-                      title: Tour Title
-                      duration: '3.0'
-                      city: City
-                      description: Description
-                      cost: '100.0'
-                      photo: https://image.jpg
-                      user_id: 1
-                      created_at: '2022-09-21T15:41:25.060Z'
-                      updated_at: '2022-09-21T15:41:25.060Z'
-                    - id: 2
-                      title: Tour Title
-                      duration: '3.0'
-                      city: City
-                      description: Description
-                      cost: '100.0'
-                      photo: https://image.jpg
-                      user_id: 2
-                      created_at: '2022-09-21T15:41:25.060Z'
-                      updated_at: '2022-09-21T15:41:25.060Z'
+                  - id: 1
+                    title: Tour Title
+                    duration: '3.0'
+                    city: City
+                    description: Description
+                    cost: '100.0'
+                    photo: https://image.jpg
+                    user_id: 1
+                    created_at: '2022-09-21T15:41:25.060Z'
+                    updated_at: '2022-09-21T15:41:25.060Z'
+                  - id: 2
+                    title: Tour Title
+                    duration: '3.0'
+                    city: City
+                    description: Description
+                    cost: '100.0'
+                    photo: https://image.jpg
+                    user_id: 2
+                    created_at: '2022-09-21T15:41:25.060Z'
+                    updated_at: '2022-09-21T15:41:25.060Z'
     post:
       summary: New tour
       tags:
@@ -108,17 +105,16 @@ paths:
               examples:
                 successful:
                   value:
-                    data:
-                      id: 1
-                      title: Tour Title
-                      duration: '3.0'
-                      city: City
-                      description: Description
-                      cost: '100.0'
-                      photo: https://image.jpg
-                      user_id: 1
-                      created_at: '2022-09-21T15:41:25.060Z'
-                      updated_at: '2022-09-21T15:41:25.060Z'
+                    id: 1
+                    title: Tour Title
+                    duration: '3.0'
+                    city: City
+                    description: Description
+                    cost: '100.0'
+                    photo: https://image.jpg
+                    user_id: 1
+                    created_at: '2022-09-21T15:41:25.060Z'
+                    updated_at: '2022-09-21T15:41:25.060Z'
       requestBody:
         content:
           application/json:
@@ -128,17 +124,17 @@ paths:
                 title:
                   type: string
                 duration:
-                  type: string
+                  type: number
                 city:
                   type: string
                 description:
                   type: string
                 cost:
-                  type: string
+                  type: number
                 photo:
                   type: string
                 user_id:
-                  type: string
+                  type: integer
               required:
               - title
               - duration
@@ -206,13 +202,12 @@ paths:
               examples:
                 successfull_login:
                   value:
-                    data:
-                      id: 1
-                      name: user
-                      created_at: '2022-09-23T16:35:16.614Z'
-                      updated_at: '2022-09-23T16:35:16.614Z'
-                      email: user@gmail.com
-                      password_digest: "$2a$12$Dqn9G4HpoJQu3xh6GCEGKOr6vuZJf8afop4SLPaexOTjfG04vn8c6"
+                    id: 1
+                    name: user
+                    created_at: '2022-09-23T16:35:16.614Z'
+                    updated_at: '2022-09-23T16:35:16.614Z'
+                    email: user@gmail.com
+                    password_digest: "$2a$12$Dqn9G4HpoJQu3xh6GCEGKOr6vuZJf8afop4SLPaexOTjfG04vn8c6"
         '422':
           description: Invalid credentials
           content:
@@ -267,39 +262,38 @@ paths:
               examples:
                 successful:
                   value:
-                    data:
-                    - tour:
-                        id: 1
-                        title: First Tour
-                        duration: '2.0'
-                        city: Mansoura
-                        description: In this tour we will visit x and ...
-                        cost: '500.0'
-                        photo: https://www.mans.edu.eg/images/album/mansoura-city/mc-nile.jpg
-                        user_id: 1
-                        created_at: '2022-09-22T00:27:45.651Z'
-                        updated_at: '2022-09-22T00:27:45.651Z'
-                      persons_number: 3
-                      reservation_date: '2022-10-22'
-                      reservation_id: 1
-                    - tour:
-                        id: 2
-                        title: Second Tour
-                        duration: '3.0'
-                        city: Sharm El Sheikh
-                        description: In this tour we will visit y and ...
-                        cost: '600.0'
-                        photo: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/ed/sharm-el-sheikh.jpg?w=700&h=500&s=1
-                        user_id: 2
-                        created_at: '2022-09-22T00:27:45.670Z'
-                        updated_at: '2022-09-22T00:27:45.670Z'
-                      persons_number: 2
-                      reservation_date: '2022-10-22'
-                      reservation_id: 2
+                  - tour:
+                      id: 1
+                      title: First Tour
+                      duration: '2.0'
+                      city: Mansoura
+                      description: In this tour we will visit x and ...
+                      cost: '500.0'
+                      photo: https://www.mans.edu.eg/images/album/mansoura-city/mc-nile.jpg
+                      user_id: 1
+                      created_at: '2022-09-22T00:27:45.651Z'
+                      updated_at: '2022-09-22T00:27:45.651Z'
+                    persons_number: 3
+                    reservation_date: '2022-10-22'
+                    reservation_id: 1
+                  - tour:
+                      id: 2
+                      title: Second Tour
+                      duration: '3.0'
+                      city: Sharm El Sheikh
+                      description: In this tour we will visit y and ...
+                      cost: '600.0'
+                      photo: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fc/ed/sharm-el-sheikh.jpg?w=700&h=500&s=1
+                      user_id: 2
+                      created_at: '2022-09-22T00:27:45.670Z'
+                      updated_at: '2022-09-22T00:27:45.670Z'
+                    persons_number: 2
+                    reservation_date: '2022-10-22'
+                    reservation_id: 2
     post:
       summary: New reservation
       tags:
-      - Reservation
+      - Reservations
       description: Create a new reservation
       security:
       - bearer_auth: []
@@ -316,14 +310,13 @@ paths:
               examples:
                 successful:
                   value:
-                    data:
-                      id: 1
-                      reservation_date: '2022-10-21'
-                      persons_number: 2
-                      user_id: 1
-                      tour_id: 1
-                      created_at: '2022-09-21T15:41:25.060Z'
-                      updated_at: '2022-09-21T15:41:25.060Z'
+                    id: 1
+                    reservation_date: '2022-10-21'
+                    persons_number: 2
+                    user_id: 1
+                    tour_id: 1
+                    created_at: '2022-09-21T15:41:25.060Z'
+                    updated_at: '2022-09-21T15:41:25.060Z'
       requestBody:
         content:
           application/json:
@@ -331,13 +324,13 @@ paths:
               type: object
               properties:
                 persons_number:
-                  type: string
+                  type: integer
                 reservation_date:
                   type: string
                 user_id:
-                  type: string
+                  type: integer
                 tour_id:
-                  type: string
+                  type: integer
               required:
               - persons_number
               - tour_id
@@ -353,7 +346,7 @@ paths:
     delete:
       summary: delete reservation
       tags:
-      - Reservation
+      - Reservations
       description: Delete a reservation
       security:
       - bearer_auth: []
