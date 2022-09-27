@@ -6,7 +6,11 @@
 
 ## Link to the Front-End repository
 
+[Fron-end Repository](https://github.com/Santiago220991/Booking-Tours-Front-End)
 
+## Live Demo
+
+[Link to live Demo](https://tourify-app.netlify.app)
 
 ## Built With
 
