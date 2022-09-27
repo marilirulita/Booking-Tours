@@ -24,8 +24,8 @@ RSpec.configure do |config|
         securitySchemes: {
           bearer_auth: {
             type: :http,
-            scheme: :bearer,    
-            bearer_format: "Authorization"
+            scheme: :bearer,
+            bearer_format: 'Authorization'
           }
         }
       },
