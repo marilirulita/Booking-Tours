@@ -25,12 +25,12 @@ RSpec.configure do |config|
           bearer_auth: {
             type: :http,
             scheme: :bearer,
-            bearer_format: 'Authorization'
+            bearer_format: 'JWT'
           }
         }
       },
       security: [{
-        bearer_auth: []
+        bearerAuth: []
       }],
       servers: [
         {
