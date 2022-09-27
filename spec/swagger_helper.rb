@@ -25,19 +25,19 @@ RSpec.configure do |config|
           bearer_auth: {
             type: :http,
             scheme: :bearer,
-            bearer_format: 'JWT'
+            bearer_format: 'Authorization'
           }
         }
       },
       security: [{
-        bearerAuth: []
+        bearer_auth: []
       }],
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: 'http://{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'www.example.com'
+              default: 'localhost:3000'
             }
           }
         }
