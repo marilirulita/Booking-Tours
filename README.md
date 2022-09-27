@@ -4,13 +4,17 @@
 
 > This is an app in wich you can reserve a tour, create a tour, delete a tour and show all your reserved tours. This app was created separating the Fron-End and the Back-End in two repositories. This is the repositorie of the back-end API.
 
-## Link to the Front-End repository
+## Front-End repository
 
-[Fron-end Repository](https://github.com/Santiago220991/Booking-Tours-Front-End)
+[Link to Fron-end Repository](https://github.com/Santiago220991/Booking-Tours-Front-End)
 
 ## Live Demo
 
 [Link to live Demo](https://tourify-app.netlify.app)
+
+## API-Documentation
+
+[Link to Documentation](https://tourify-app.herokuapp.com/api-docs/index.html)
 
 ## Built With
 
