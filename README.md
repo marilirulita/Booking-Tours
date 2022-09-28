@@ -20,12 +20,23 @@
 
 - Rails, Ruby, Devise, Cancancan, Rspec, SQL, Capybara.
 
+## Prerequisites
+- Make sure Ruby is installed.
+- Make sure PostgreSQL is installed.
+
 ## Setup Project
-- Clone repo by using (https://github.com/Santiago220991/Booking-Tours.git)
+- Open your terminal.
+- Clone repo by running this command: `git clone https://github.com/Santiago220991/Booking-Tours.git`
+- Navigate to project folder: `cd Booking-Tours`
 - Install dependencies with `bundle install`
+- Create the database: `rails db:create`
+- Create database tables and schema: `rails db:migrate`
 
 ## Usage
 - Run with `rails server`
+
+## Run the tests
+`rspec spec`
 
 ## Authors
 
