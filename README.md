@@ -16,6 +16,14 @@
 
 [Link to Documentation](https://tourify-app.herokuapp.com/api-docs/index.html)
 
+## Kanban board
+- [Kanban board](https://github.com/Santiago220991/Booking-Tours/projects/1)
+- [screenshot](https://user-images.githubusercontent.com/98363075/190238874-d15da8c9-42e7-484e-add3-57b577355800.png)
+- Number of team members: 3
+  - @Santiago220991 
+  - @marilirulita
+  - @devMahmoud
+
 ## Built With
 
 - Rails, Ruby, Devise, Cancancan, Rspec, SQL, Capybara.
