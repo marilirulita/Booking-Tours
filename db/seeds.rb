@@ -3,5 +3,6 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+user = User.create(name: "Visit", email: "visit@email.com", password: "visit123")
+Tour.create(title: "Viaje San Felipe", duration: 2, city: "San Felipe" , description: "Viaje a playas de san felipe por dos semanas", cost: 100, photo: "https://waki-exp.com/wp-content/uploads/2022/05/10-de-mejores-playas-de-Mexico-poco-conocidas-pero-hermosas.jpg", user_id: user.id)
+Tour.create(title: "Viaje Rosarito", duration: 1, city: "Rosarito", description: "Viaje a rosarito de una semana", cost: 150, photo: "https://www.expedia.mx/stories/wp-content/uploads/2022/05/playas-para-ninos-mexico-xpu-ha-riviera-maya-scaled.jpg", user_id: user.id)
