@@ -6,24 +6,11 @@
 
 ## Front-End repository
 
-[Link to Fron-end Repository](https://github.com/Santiago220991/Booking-Tours-Front-End)
+[Link to Fron-end Repository](https://github.com/marilirulita/Booking-Tours-Front-End)
 
 ## Live Demo
 
 [Link to live Demo](https://tourify-app.netlify.app)
-
-## API-Documentation
-
-[Link to Documentation](https://tourify-app.herokuapp.com/api-docs/index.html)
-
-## Kanban board
-
-- [Kanban board](https://github.com/Santiago220991/Booking-Tours/projects/1)
-- [Screenshot](https://user-images.githubusercontent.com/98363075/190238874-d15da8c9-42e7-484e-add3-57b577355800.png)
-- Number of team members: 3
-  - Santiago Cárdenas
-  - Mar Bautista
-  - Mahmoud Makhlouf
 
 ## Built With
 
@@ -37,7 +24,7 @@
 ## Setup Project
 
 - Open your terminal.
-- Clone repo by running this command: `git clone https://github.com/Santiago220991/Booking-Tours.git`
+- Clone repo by running this command: `git clone git@github.com:marilirulita/Booking-Tours.git`
 - Navigate to project folder: `cd Booking-Tours`
 - Install dependencies with `bundle install`
 - Create the database: `rails db:create`
@@ -48,13 +35,118 @@
 
 - Run with `rails server`
 
-- You can get available tours with an HTTP request like this:
+- You can get all available tours with an HTTP request like this:
 
-- You have to create a user to create a tour:
+```
+const result = await fetch('http://127.0.0.1:3000/tours');
+const resultJson = await result.json();
+```
 
-- You have to log in to delete a tour you took before or create a new one:
+- You have to create a user to interact with api:
+
+==In this example you create an user with name, email and password==.
+```
+const response = await fetch('http://127.0.0.1:3000/users', {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify({
+      "name": "user name",
+      "email": "user email",
+      "password": "user password",
+    }),
+  });
+```
+
+- You have to log in to delete a tour you create before or create a new one:
+
+==In this response you will get data. You need to pay atention in the token for make moves deleting or creeating tours==.
+
+```
+const loginResponse = await fetch('http://127.0.0.1:3000/auth/login', {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify({
+      "email": "user email",
+      "password": "user password"
+      }),
+  });
+```
+
+- To create a tour
+
+==In Authrization you need to add the token data gived in login response==.
+
+```
+const response = await fetch('http://127.0.0.1:3000/tours', {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: loginResponse.token,
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify({
+      "title": "tour name",
+      "duration": integer,
+      "description": "text description",
+      "city": "city name",
+      "cost": integer,
+      "photo": "url of a picture",
+  }),
+  });
+```
+
+- To delete a tour made for your user
+
+```
+const response = await fetch('http://127.0.0.1:3000/tours/id#', {
+    method: 'DELETE',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: loginResponse.token,
+    },
+  });
+```
 
 - You can sign up for a tour from other users:
+
+```
+const response = await fetch('http://127.0.0.1:3000/user_tours', {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: loginResponse.token,
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify({
+      persons_number: integer,
+      reservation_date: 'date',
+      tour_id: integer,
+  }),
+  });
+```
 
 ## Run the tests
 
@@ -62,17 +154,17 @@
 
 ## Authors
 
-👤 **Santiago Cárdenas**
-
-- GitHub: [@Santiago Cárdenas](https://github.com/Santiago220991)
-- LinkedIn: [Santiago Cárdenas](https://www.linkedin.com/in/alexandersantiagocardenas/)
-- Twitter: [@SanCardenas10](https://twitter.com/SanCardenas10)
-
 👤 **Mar Bautista**
 
 - GitHub: [marilirulita](https://github.com/marilirulita)
 - LinkedIn: [mar bautista](https://www.linkedin.com/in/marbautista/)
 - Twitter: [@marylirulita](https://twitter.com/marylirulita)
+
+👤 **Santiago Cárdenas**
+
+- GitHub: [@Santiago Cárdenas](https://github.com/Santiago220991)
+- LinkedIn: [Santiago Cárdenas](https://www.linkedin.com/in/alexandersantiagocardenas/)
+- Twitter: [@SanCardenas10](https://twitter.com/SanCardenas10)
 
 👤 **Mahmoud Makhlouf**
 
@@ -80,12 +172,6 @@
 - LinkedIn: [Mahmoud Makhlouf](https://www.linkedin.com/in/mahmoud-abdelkader-makhlouf/)
 
 ---
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/Santiago220991/Booking-Tours/issues).
 
 ## Show your support
 
